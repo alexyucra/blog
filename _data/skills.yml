@@ -1,19 +1,39 @@
 - name: Software Engineer Keywords
   keywords:
-      - Java
-      - C++
+      - PHP
+      - Elixir
       - Python
+      - Golang
       - Design Patterns
+      - CI/CD
+      - Api RestFull
 
 - name: Mobile Developer Keywords
   keywords:
-      - Android
+      - Android adb
+      - Makefile and build Android
       - Reverse Engineering
 
-- name: Windows Developer Keywords
+- name: Linux Developer Keywords
   keywords:
-      - Win32 SDK
-      - DuiLib
-      - WTL
-      - COM
-      - WinDbg
+      - Shell Script
+      - Deploy services
+      - Monitoring
+      - Docker Clustering
+    
+- name: Data Base Keywords
+  keywords:
+      - Mysql
+      - Mariadb
+      - Galera Cluster
+      - Cluster Control
+      - ProxySQL
+      - Table partition
+      - Tuning DB
+
+- name: Framework Developer Keywords
+  keywords:
+      - Laravel
+      - Flask
+      - Airflow
+      - Apache Phoenix
