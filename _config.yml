@@ -10,22 +10,22 @@ description: "Assuntos: Análise, tecnología e Desenvolvimento"
 keywords: 码志, Zhuang Ma, mzlogin, mazhuang, 闷骚的程序员
 timezone: America/Sao_Paulo
 encoding: "utf-8"
-# 页面左下角显示的年份
+# Ano exibido no canto inferior esquerdo da página
 since: 2015
-# 源码仓库，请替换成自己的
+# Repositório de código-fonte, substitua-o pelo seu próprio
 repository: alexyucra/blog.github.io
-# 对 css 和 js 资源的 cdn 加速配置
+# Configuração de aceleração de CDN para recursos css e js
 cdn:
     jsdelivr:
         enabled: false
-# 可选组件配置
+# Configuração de componente opcional
 components:
-    # 分享
+    # compartilhar
     # weibo,qq,wechat,douban,qzone,linkedin,facebook,twitter
     share:
         enabled: false
         hide-platforms: qq,facebook
-    # 不蒜子访问统计
+    # Não faça estatísticas de visitas de alhozi
     busuanzi:
         enabled: false
         start_date: 2020-05-03
@@ -33,22 +33,22 @@ components:
     side_bar_repo:
         enabled: true
         limit: 5
-    # 文章字数统计
+    # Contagem de palavras do artigo
     word_count:
         enabled: true
-    # 页面右上角，以及「关于」页面的二维码
-    # 修改图片请替换 assets/images/qrcode.jpg
+    # O canto superior direito da página e o código QR na página "Sobre"
+    # Por favor, substitua a imagem assets/images/qrcode.jpg
     qrcode:
         enabled: true
-        image_alt: 闷骚的程序员
-    # 维基索引页使用哪种视图，支持 列表（list）/分类（cate）
+        image_alt: Análise, Tecnologia e Desenvolvimento
+    # Qual visualização é usada para a página de índice do wiki, lista de suporte (lista)/categoria (cate)
     wiki:
         view: cate
-# 压缩页面内容
+# Compactar o conteúdo da página
 compress_html:
   clippings: all
   comments: ["<!--", "-->"]
-# 代码高亮风格，支持的 theme 列表见 https://github.com/mzlogin/rouge-themes
+# Lista de temhas suportados https://github.com/mzlogin/rouge-themes
 highlight_theme: github
 
 # ---------------- #
@@ -75,11 +75,11 @@ navs:
 
 #   -
 #     href: /archives/
-#     label: 归档
+#     label: Arquivos
 
 #   -
 #     href: /open-source/
-#     label: 开源
+#     label: Código fonte
 
   -
     href: /wiki/
@@ -129,46 +129,46 @@ collections:
 # ---------------- #
 # support provider: disqus, gitment, gitalk, utterances, beaudar, giscus
 comments_provider: giscus
-# !!!重要!!! 请修改下面这些信息为你自己申请的
+# !!!Importante!!! Por favor modifique as seguintes informações para sua própria aplicação
 # !!!Important!!! Please modify infos below to yours
-# disqus 配置参考：https://disqus.com
+# disqus referencia：https://disqus.com
 disqus:
     username: 
-# gitment 配置参考：https://imsun.net/posts/gitment-introduction/
+# gitment referencia：https://imsun.net/posts/gitment-introduction/
 gitment:
     owner: mzlogin
     repo: blog-comments
     oauth:
         client_id: d2e1cbbd298958076462
         client_secret: b42a4178e5fd4a7cf63189ef4b1453b05c375709
-# gitalk 配置参考：https://github.com/gitalk/gitalk#install
+# gitalk referencia：https://github.com/gitalk/gitalk#install
 gitalk:
     owner: mzlogin
     repo: blog-comments
     clientID: d2e1cbbd298958076462
     clientSecret: b42a4178e5fd4a7cf63189ef4b1453b05c375709
-# utterances 配置参考：https://utteranc.es/
+# utterances referencia：https://utteranc.es/
 utterances:
     repo: mzlogin/blog-comments
-# beaudar 配置参考：https://beaudar.lipk.org/
+# beaudar referencia：https://beaudar.lipk.org/
 beaudar:
     repo: mzlogin/blog-comments
-# giscus 配置参考：https://giscus.app/zh-CN
+# giscus referencia：https://giscus.app/zh-CN
 giscus:
     repo: mzlogin/blog-comments
     repo-id: MDEwOlJlcG9zaXRvcnk5MzEyNzkxNw==
     category: Announcements
     category-id: DIC_kwDOBY0E7c4CRtg9
-# 在使用其它评论组件时可点击显示 Disqus
+# Clique para mostrar ao usar outros componentes de comentários Disqus
 lazy_load_disqus : false
 
 # ---------------- #
 #      Search      #
 # ---------------- #
 simple_jekyll_search:
-    # 是否支持全文搜索
+    # Se deve dar suporte à pesquisa de texto completo
     fulltext: false
-    # 最多显示多少条搜索结果
+    # Número máximo de resultados de pesquisa a serem exibidos
     limit: 10
 
 # ---------------- #
