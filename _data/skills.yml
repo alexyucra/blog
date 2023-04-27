@@ -37,3 +37,5 @@
       - Flask
       - Airflow
       - Apache Phoenix
+      - Streamlit
+      - ProxySQL

@@ -9,6 +9,7 @@ permalink: /about/
 ---
 
 Analista de Dados | Ti | Sistemas | DBA | Desenvolvedor FullStack 
+
 Ciência de dados | Engenheiro Estatístico | Instrutor Consultor
 
 
