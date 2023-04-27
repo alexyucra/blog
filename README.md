@@ -33,25 +33,24 @@ Depois de bifurcar este projeto, há algumas coisas que precisam ser feitas para
 
 2. Modifique o nome de domínio.
 
-   Se você precisar vincular seu próprio nome de domínio, modifique o conteúdo do arquivo CNAME e consulte [configurando domínios personalizados](https://docs.github.com/cn/pages/configuring-a-custom-domain-for-your-github-pages-site) para sites do GitHub Pages; se você não precisar vincular seu próprio nome de domínio, exclua o arquivo CNAME.
+   Se você precisar vincular seu próprio nome de domínio, modifique o conteúdo do arquivo CNAME e configure-o consultando Configurando domínio personalizado para o site do GitHub Pages ; se você não precisar vincular seu próprio nome de domínio, exclua o arquivo CNAME .
 
-3. Altere a configuração.
+3. Alterar configuração.
 
-   A configuração do site fica basicamente concentrada no arquivo `_config.yml`, mude as partes relacionadas às informações pessoais pelas suas, como url do site, título, legenda e configuração de módulos de comentários de terceiros.
+   A configuração do site concentra-se basicamente no arquivo `_config.yml`, e substitui as partes relacionadas às informações pessoais pelas suas, como url do site, título, subtítulo e configuração do módulo de comentários de terceiros.
 
-   **Módulo de comentários:** atualmente suporta disqus, gitment, gitalk, enunciados, beaudar e giscus, basta escolher um deles, e giscus é recomendado. Seus respectivos links do guia de configuração oficial são postados na seção Comentários do arquivo `_config.yml`, consulte a configuração do guia oficial.
+   **Módulo de comentário**: atualmente suporta disqus, gitment, gitalk, expressões, beaudar e giscus, você pode escolher um deles, e giscus é recomendado. Seus respectivos links do guia de configuração oficial são postados na seção de comentários do arquivo `_config.yml`, consulte a configuração do guia oficial.
 
-   **Nota:** Se você usa disqus, porque a política de manipulação de nomes de usuário e lista de permissões de nomes de domínio do disqus é falha, certifique-se de modificar o disqus.username para o seu próprio, caso contrário, deixe este campo em branco. `disqus.username`.
+   **Nota**: Se você usa disqus, altere disqus.username para o seu próprio, caso contrário, deixe este campo vazio, porque disqus tem falhas em sua política de lidar com a lista branca de nomes de usuário e nomes de domínio. 
 
-4. Excluir meus artigos e fotos.
+4. Exclua meus artigos e fotos.
 
-   Exceto pelo arquivo `template.md` nas pastas a seguir, você pode excluir todos eles e adicionar seu próprio conteúdo.
+   Com exceção do arquivo template.md nas pastas a seguir, todos podem ser excluídos e, em seguida, adicionar seu próprio conteúdo.
 
-   * Na pasta _posts estão minhas postagens de blog publicadas.
-   * Na pasta _drafts estão minhas postagens de blog não publicadas.
-   * Na pasta _wiki estão minhas páginas wiki publicadas.
-   * Na pasta _fragments estão trechos dos meus artigos publicados.
-   * A pasta de imagens contém imagens usadas em meus artigos e páginas.
+   * \_posts ,nesta pasta estão minhas postagens de blog publicadas.
+   * \_drafts ,nesta pasta  estão minhas postagens de blog não publicadas.
+   * \_wiki ,nesta pasta estão minhas páginas wiki publicadas.
+   * images ,esta pasta contém as imagens usadas em meus artigos e páginas.
 
 5. Modifique a página "Sobre".
 

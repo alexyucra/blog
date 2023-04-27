@@ -1,20 +1,20 @@
 ---
 layout: post
-title: 修复 MacVim 9.0 的 Python3 支持
+title: Corrigir suporte Python3 para MacVim 9.0
 categories: Vim
-description: 修复 MacVim 9.0 的 Python3 支持
+description: Corrigir suporte Python3 para MacVim 9.0修复 MacVim 9.0 的 Python3 支持
 keywords: MacVim, Python3
 ---
 
-前两天刚刚升级到了 MacVim 9.0 的最新版本，日常编辑编辑文字没遇到过什么问题，直到今天动了一下插件。
+Acabei de atualizar para a versão mais recente do MacVim 9.0 há dois dias e não encontrei nenhum problema na edição diária e na edição de texto, até que movi o plug-in hoje.
 
-## 发现问题
+## problema encontrado
 
-今早看到一个有意思的 Vim 插件，安装上试用了下，感觉对我来说不太实用，就删掉配置，打算运行 `:PlugClean` 清理掉它，结果 MacVim 提示我即将删掉的插件有两个——除了试用的这个以外，还有 LeaderF。
+Eu vi um plug-in do Vim interessante esta manhã, instalei e experimentei, mas não me pareceu muito prático, então apaguei a configuração e planejei executá-lo `:PlugClean ` para limpá dois plug-ins—— Além deste teste, há também o LeaderF.
 
-LeaderF 是我用得比较多的插件之一了，我并没有表明意图我要删掉它，是发生了什么让 vim-plug 这样以为呢？肯定是有什么误会。
+LeaderF é um dos plug-ins que eu uso muito. Não expressei minha intenção de excluí-lo. O que aconteceu para o vim-plug pensar assim? Deve haver algum mal-entendido.
 
-我的 _vimrc 文件里，添加 LeaderF 插件是这样写的：
+No meu arquivo _vimrc, adicionar o plug-in LeaderF é escrito assim:
 
 ```
 if has('python') || has('python3')
@@ -22,17 +22,17 @@ if has('python') || has('python3')
 endif
 ```
 
-于是打开一个 MacVim 窗口，试了下 `:echo has('python')` 和 `:echo has('python3')`，输出竟然都是 0，那就难怪了……
+Então eu abri uma janela do MacVim, tentei `:echo has('python')` e `:echo has('python3')`, a saída acabou sendo 0, não é de admirar...
 
-## 分析问题
+## analisar problema
 
-一开始主要想弄清楚两点：
+No começo, eu quero principalmente descobrir dois pontos:
 
-1. 我使用的 MacVim 版本编译时究竟有没有启用 Python 支持？
+1. A versão do MacVim que estou usando foi compilada com suporte a Python ativado?
 
-    在 MacVim 窗口里运行 `:version`，可以看到 `+python/dyn` 和 `+python3/dyn`，那说明同时启用了 Python 和 Python3 支持。
+    Executando na janela do MacVim `:version`, você pode ver `+python/dyn` e `+python3/dyn`, o que significa que o suporte a Python e Python3 está ativado ao mesmo tempo.
 
-2. 我本地有没有安装 Python？
+2. Eu tenho o Python instalado localmente?
 
     ```sh
     $ python
@@ -50,62 +50,62 @@ endif
     >>>
     ```
 
-    可以看到我本地安装了 Python3 的 3.8、3.9、3.10 三个版本，默认 3.9，没有安装 Python2。
+    Você pode ver que instalei Python3 versões 3.8, 3.9 e 3.10 localmente. O padrão é 3.9 e o Python2 não está instalado
 
-这没什么问题，那继续找，尝试下在 MacVim 里执行 Python3 语句：
+Não há nada de errado com isso, então continue procurando e tente executar as instruções do Python3 no MacVim:
 
 ```
 :py3 import sys;
 ```
 
-结果输出了一堆报错：
+Como resultado, vários erros foram gerados:
 
 ```
-E370: 无法加载库 /usr/local/Frameworks/Python.framework/Versions/3.10/Python：dlopen(/usr/local/Frameworks/Python.fram
+E370: Não foi possível carregar a biblioteca /usr/local/Frameworks/Python.framework/Versions/3.10/Python：dlopen(/usr/local/Frameworks/Python.fram
 ework/Versions/3.10/Python, 0x0009): tried: '/usr/local/Frameworks/Python.framework/Versions/3.10/Python' (no such fil
 e), '/Library/Frameworks/Python.framework/Versions/3.10/Python' (no such file), '/System/Library/Frameworks/Python.fra
 mework/Versions/3.10/Python' (no such file)
-E263: 抱歉，此命令不可用，无法加载 Python 库。
+E263: Desculpe, este comando não está disponível, a biblioteca Python não pôde ser carregada。
 ```
 
-它要找的这个文件路径确实不存在……毕竟我默认的是 3.9 版本，所以  /usr/local/Frameworks/Python.framework/Versions/ 下只有 3.9 和 current 目录，没有 3.10。
+O caminho do arquivo que ele está procurando não existe... Afinal, minha versão padrão é 3.9, então há apenas 3.9 e os diretórios atuais em /usr/local/Frameworks/Python.framework/Versions/, não 3.10.
 
-它为啥放着配置好的 3.9 版本不用，非得这么头铁去找 3.10 版本呢？这个问题先不回答，留待后面的刨根问底环节。现在先解决问题。
+Por que ele deixa a versão 3.9 configurada sem uso, então deve estar tão desesperado para encontrar a versão 3.10? Esta pergunta não será respondida por enquanto, e será deixada para o link de questionamento posterior. Agora, para o problema.。
 
-## 解决问题
+## Resolva o problema
 
-在网上将以上错误信息搜索一番后，了解到了可以通过设置 `pythonthreedll` 来指定动态加载的 Python3 支持库。
+Depois de pesquisar a mensagem de erro acima na Internet, descobri que a biblioteca de suporte Python3 carregada dinamicamente pode ser especificada `pythonthreedll` definindo .
 
-另外，也了解了一下，通过 brew 安装的多个 Python 版本如何切换默认版本。
+Além disso, também aprendi como alternar a versão padrão de várias versões do Python instaladas por meio do brew.
 
-所以这个小问题找到了两种解决方法：
+Portanto, este pequeno problema encontrou duas soluções:
 
-一、在 _vimrc 里添加配置，指定动态加载的 Python3 支持库路径，比如：
+1. Adicione a configuração em _vimrc para especificar o caminho da biblioteca de suporte do Python3 carregado dinamicamente, por exemplo:
 
     ```vim
     let &pythonthreedll='/usr/local/Frameworks/Python.framework/Versions/3.9/python'
     ```
 
-二、切换系统默认 Python3 版本，比如这里 MacVim 寻找 3.10 版本，我就把默认的切换到 3.10 版本好了：
+2. Mude a versão Python3 padrão do sistema. Por exemplo, se o MacVim estiver procurando a versão 3.10 aqui, mudarei a versão padrão para a versão 3.10:
 
     ```sh
     brew unlink python@3.9
     brew link python@3.10
     ```
 
-经验证以上两个方法都可以解决问题，我最终用了第二种。
+Foi verificado que os dois métodos acima podem resolver o problema e, finalmente, usei o segundo.
 
-## 刨根问底
+## Chegue ao fundo disso
 
-上面我们遗留了一个问题，为什么 MacVim 那么头铁非要加载 3.10 版本的 Python 支持库呢？
+Deixamos uma pergunta acima, por que o MacVim insiste em carregar a versão 3.10 da biblioteca de suporte do Python?
 
-首先看一下 `pythonthreedll` 的帮助文档说明：
+Primeiro `pythonthreedll` veja a descrição do documento de ajuda:
 
 ```
 :h pythonthreedll
 ```
 
-可以看到：
+pode ser visto:
 
 ```
 'pythonthreedll'	string	(default depends on the build)
@@ -119,24 +119,25 @@ E263: 抱歉，此命令不可用，无法加载 Python 库。
 	security reasons.
 ```
 
-也就是说默认值是在编译时指定的 `DYNAMIC_PYTHON3_DLL` 值，按我理解那就是说如果没有在配置文件里人为指定，那它就是会按编译时指定的去加载。
+Ou seja, o valor padrão é `DYNAMIC_PYTHON3_DLL` o valor entendi, significa que se não for especificado no arquivo de configuração, ele será carregado conforme especificado em tempo de compilação.
 
-那编译时的 `DYNAMIC_PYTHON3_DLL`，我们可以在 MacVim 的官方仓库 [.github/worflows/ci-macvim.yaml](https://github.com/macvim-dev/macvim/blob/master/.github/workflows/ci-macvim.yaml) 里找到，关键内容：
+Ao compilar `DYNAMIC_PYTHON3_DLL`，, podemos encontrá-lo no warehouse.github [.github/worflows/ci-macvim.yaml](https://github.com/macvim-dev/macvim/blob/master/.github/workflows/ci-macvim.yaml) macvim.yaml oficial do MacVim , o conteúdo principal:
 
 ```yaml
 ...
 
-  vi_cv_dll_name_python3: /usr/local/Frameworks/Python.framework/Versions/3.10/Python # Make sure to keep src/MacVim/vimrc synced with the Python version here for the Python DLL detection logic.
+vi_cv_dll_name_python3: /usr/local/Frameworks/Python.framework/Versions/3.10/Python 
+# Make sure to keep src/MacVim/vimrc synced with the Python version here for the Python DLL detection logic.
 
 ...
 
-          grep -q -- "-DDYNAMIC_PYTHON3_DLL=\\\\\"${vi_cv_dll_name_python3}\\\\\"" src/auto/config.mk
+grep -q -- "-DDYNAMIC_PYTHON3_DLL=\\\\\"${vi_cv_dll_name_python3}\\\\\"" src/auto/config.mk
 
 ...
 ```
 
-至此破案了。
+Até agora o caso foi resolvido.
 
-## 参考
+## Bibliografia
 
 - <https://www.jianshu.com/p/18f06d12348c>
