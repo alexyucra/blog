@@ -1,10 +1,10 @@
 ---
 layout: page
 title: About
-description: 打码改变世界
-keywords: Zhuang Ma, 马壮
+description: A codificação muda o mundo
+keywords: Analista de Dados, Ti, Sistemas, DBA, Desenvolvedor FullStack
 comments: true
-menu: 关于
+menu: about
 permalink: /about/
 ---
 
