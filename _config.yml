@@ -2,7 +2,7 @@
 #   Main Configs   #
 # ---------------- #
 baseurl:
-url: https://alexyucra.github.io/blog/
+url: https://alexyucra.github.io/blog
 date_format: "ordinal"
 title: Blog
 subtitle: "Análise, Tecnología e Desenvolvimento"
@@ -13,7 +13,7 @@ encoding: "utf-8"
 # Ano exibido no canto inferior esquerdo da página
 since: 2015
 # Repositório de código-fonte, substitua-o pelo seu próprio
-repository: alexyucra/blog.github.io
+repository: alexyucra/blog.git
 # Configuração de aceleração de CDN para recursos css e js
 cdn:
     jsdelivr:

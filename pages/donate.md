@@ -1,24 +1,21 @@
 ---
 layout: page
-title: 捐助 / Donate
-description: 随缘
+title: doar / Donate
+description: renúncia
 keywords: Donate
 comments: true
-menu: 赞助
+menu: patrocinador
 permalink: /donate/
 ---
 
-> 做了一些微小的事情，如果对你有帮助，可以考虑请我喝杯咖啡。
+> Fiz algo minúsculo, se isso te ajudar, considere me pagar um café.
 > 
 > Did some tiny things, consider buying me a cup of coffee if it helps you.
 
-## Paypal
+## Aceito um Café
 
-[Donate via Paypal](https://paypal.me/mzlogin)
+[<img height="40px" src="https://www.ko-fi.com/img/githubbutton_sm.svg"/>](https://ko-fi.com/latindev)
 
-## 微信 / Wechat
-
-<img style="width:256px;border:1px solid lightgrey;" src="{{ assets_base_url }}/assets/images/receipt-code-wechat.jpeg" alt="wechat receipt code" />
 
 <!-- ## 支付宝 / Alipay -->
 <!--  -->

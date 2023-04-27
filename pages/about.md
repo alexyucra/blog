@@ -8,7 +8,7 @@ menu: 关于
 permalink: /about/
 ---
 
-Bach. Estatístico | Engenheiro de software | Analista de dados
+Analista de Dados | Ti | Sistemas | DBA | Desenvolvedor FullStack || Ciência de dados | Engenheiro Estatístico | Instrutor Consultor
 
 
 ## Social
@@ -20,7 +20,7 @@ Bach. Estatístico | Engenheiro de software | Analista de dados
 {% if site.url contains 'mazhuang.org' %}
 <li>
 Like：<br />
-<img style="height:192px;width:192px;border:1px solid lightgrey;" src="{{ assets_base_url }}/assets/images/qrcode.jpg" alt="闷骚的程序员" />
+<img style="height:192px;width:192px;border:1px solid lightgrey;" src="{{ assets_base_url }}/assets/images/qrcode.jpg" alt="Latin Dev" />
 </li>
 {% endif %}
 </ul>
