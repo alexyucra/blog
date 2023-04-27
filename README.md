@@ -21,7 +21,7 @@ Meu blog Pessoal：<https://alexyucra.github.io/blog/>，seja Bem-Vindo。
 
 **[Visitar blog](https://alexyucra.github.io/blog)**
 
-![screenshot home](https://mazhuang.org/assets/images/screenshots/home.png)
+![screenshot home](https://alexyucra.github.io/blog/assets/images/screenshots/home.png)
 
 ## Como usar
 
