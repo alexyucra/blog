@@ -13,7 +13,7 @@ encoding: "utf-8"
 # Ano exibido no canto inferior esquerdo da página
 since: 2015
 # Repositório de código-fonte, substitua-o pelo seu próprio
-repository: alexyucra/blog.git
+repository: alexyucra/blog.github.io
 # Configuração de aceleração de CDN para recursos css e js
 cdn:
     jsdelivr:
