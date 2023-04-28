@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About
+title: Quem sou, o que eu faço, o que eu como, como pode me encontrar...
 description: A codificação muda o mundo
 keywords: Analista de Dados, Ti, Sistemas, DBA, Desenvolvedor FullStack
 comments: true

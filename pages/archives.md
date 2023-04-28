@@ -1,10 +1,10 @@
 ---
 layout: page
-title: 归档
-description: 按年份归档
-keywords: 归档
+title: Arquivos
+description: Lista de arquivos
+keywords: arquivo
 comments: false
-menu: 归档
+menu: Arquivo
 permalink: /archives/
 ---
 

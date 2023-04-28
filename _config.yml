@@ -24,7 +24,7 @@ components:
     # weibo,qq,wechat,douban,qzone,linkedin,facebook,twitter
     share:
         enabled: true
-        hide-platforms: qq,facebook
+        hide-platforms: qq,weibo,douban,qzone
     # Não faça estatísticas de visitas de alhozi
     busuanzi:
         enabled: false
@@ -77,9 +77,9 @@ navs:
     href: /archives/
     label: Arquivos
 
-#   -
-#     href: /open-source/
-#     label: Código fonte
+  -
+    href: /open-source/
+    label: Código fonte
 
   -
     href: /wiki/
@@ -133,7 +133,7 @@ comments_provider: giscus
 # !!!Important!!! Please modify infos below to yours
 # disqus referencia：https://disqus.com
 disqus:
-    username: latin_dev
+    username: 
 # gitment referencia：https://imsun.net/posts/gitment-introduction/
 gitment:
     owner: mzlogin

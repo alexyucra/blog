@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Open Source Projects
-keywords: 开源,open-source,GitHub,开源项目
-description: 开源改变世界。
+title: projetos Open Source
+keywords: código aberto, open source, GitHub, show me the code.
+description: open source。
 permalink: /open-source/
 ---
 
@@ -11,8 +11,8 @@ permalink: /open-source/
 
 <section class="container">
     <header class="text-center">
-        <h1>Open Source Projects</h1>
-        <p class="lead">I have <span class="repo-count">{{ sorted_repos.size }}</span> projects on Github</p>
+        <h1>projetos Open Source </h1>
+        <p class="lead">aqui tem <span class="repo-count">{{ sorted_repos.size }}</span> projetos no Github</p>
     </header>
     <div class="repo-list">
         <!-- Check here for github metadata -->
@@ -40,7 +40,7 @@ permalink: /open-source/
                         </span>
                         <span class="meta-info" title="Last updated：{{ repo.updated_at }}">
                             <span class="octicon octicon-clock"></span>
-                            <time datetime="{{ repo.updated_at }}">{{ repo.updated_at | date: '%Y-%m-%d' }}</time>
+                            <time datetime="{{ repo.updated_at }}">{{ repo.updated_at | data: '%Y-%m-%d' }}</time>
                         </span>
                     </div>
                 </div>

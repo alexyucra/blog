@@ -1,21 +1,21 @@
 ---
 layout: post
-title: 本博客模板常见问题 Q & A
+title: Perguntas frequentes sobre este modelo de blog Perguntas e respostas - Q & A
 categories: GitHub
-description: 使用这个博客模板的朋友们时不时会提出一些问题，我将它们的解决方案逐渐整理归纳，汇总到这一篇帖子里。
+description: Resumo de perguntas e respostas.
 keywords: Jekyll, GitHub Pages
 topmost: true
 ---
 
-使用这个博客模板的朋友们时不时会提出一些问题，我将它们以及对应的解决方案逐渐整理归纳，汇总到这一篇帖子里。
+Resumo de perguntas e respostas.
 
-## 如何本地预览
+## Como visualizar localmente
 
-参考 GitHub 的官方说明：
+Consulte as instruções oficiais do GitHub:
 
 - [Setting up your Pages site locally with Jekyll](https://help.github.com/articles/setting-up-your-pages-site-locally-with-jekyll/)
 
-## 本地预览报错 undefined method map for false
+## Erro de visualização local: undefined method map for false
 
 ```
 GitHub Metadata: Failed to open TCP connection to api.github.com:443 (Connection refused - connect(2) for "api.github.com" port 443)
@@ -24,7 +24,7 @@ jekyll 3.8.5 | Error:  undefined method `map' for false:FalseClass
 Did you mean?  tap
 ```
 
-``undefined method `map` for false:FalseClass`` 这条报错之前总是伴随着 `Failed to open TCP connection to api.github.com:443` 一起出现，是在获取 GitHub Metadata 出错后，导致这一句报错：
+``undefined method `map` for false:FalseClass`` Este erro é sempre precedido por `Failed to open TCP connection to api.github.com:443` Aparecendo juntos, é depois de obter o erro de metadados do GitHub, que leva a este erro de frase:
 
 {% raw %}
 ```liquid
@@ -32,9 +32,9 @@ Did you mean?  tap
 ```
 {% endraw %}
 
-解决方法：
+Solução:
 
-模板里主要是 _includes/sidebar-popular-repo.html 和 _pages/open-source.md 两个文件里用到了 Metadata，将以上这一句前的判断条件做一下修改后问题解决，将
+No modelo, Metadados é usado principalmente nos dois arquivos _includes/sidebar-popular-repo.html e _pages/open-source.md Depois de modificar as condições de julgamento antes da frase acima, o problema é resolvido.
 
 {% raw %}
 ```liquid
@@ -42,7 +42,7 @@ Did you mean?  tap
 ```
 {% endraw %}
 
-改为
+alterado para
 
 {% raw %}
 ```liquid
@@ -50,11 +50,11 @@ Did you mean?  tap
 ```
 {% endraw %}
 
-模板最新代码已经做了修改。
+O código mais recente do modelo foi modificado.
 
-## 是否支持画流程图、时序图、mermaid 和 MathJax
+## Suporta fluxogramas de desenho, diagramas de sequência, sereia e MathJax
 
-支持。因为相关的引入文件比较大可能影响加载速度，没有默认对所有文件开启，需要在要想开启的文件的 Front Matter 里加上声明：
+apoiar. Como os arquivos importados relativamente grandes podem afetar a velocidade de carregamento, ele não é habilitado para todos os arquivos por padrão. Você precisa adicionar uma declaração no Front Matter do arquivo que deseja abrir:
 
 ```yaml
 ---
@@ -65,56 +65,56 @@ mathjax: true
 ---
 ```
 
-以上四个开关分别对应 flowchart.js（流程图）、sequence-diagram.js（时序图）、mermaid 和 MathJax 的支持，按需开启即可，然后就可以在正文里正常画图了，展示效果可以参见 <https://mazhuang.org/wiki/markdown/>，对应写法参考源文件 <https://github.com/mzlogin/mzlogin.github.io/blob/master/_wiki/markdown.md>。
+As quatro opções acima correspondem ao suporte de flowchart.js (fluxograma), sequence-diagram.js (diagrama de sequência), sereia e MathJax, respectivamente, e podem ser ativadas conforme necessário, e então você pode desenhar normalmente no texto. Para o efeito de exibição, consulte <https://alexyucra.github.io/blog/wiki/markdown/>，, consulte o arquivo de origem <https://github.com/mzlogin/mzlogin.github.io/blob/master/_wiki/markdown.md> para o método de escrita correspondente.
 
-## 如何修改代码高亮风格
+## Como modificar o estilo de destaque do código
 
-可以通过 _config.yml 文件里的配置项 `highlight_theme` 来指定代码高亮风格，支持的风格名称列表参考我维护的另一个项目：
+O estilo de realce de código pode ser especificado no arquivo `highlight_theme`. Para obter a lista de nomes de estilos suportados, consulte
 
 - <https://github.com/mzlogin/rouge-themes>
 
-在项目主页可以看到每种风格的预览效果。
+Você pode ver o efeito de visualização de cada estilo na página inicial do projeto.
 
-## 代码高亮支持哪些语言
+## Quais idiomas o realce de código oferece suporte?
 
-语言列表见 <https://github.com/rouge-ruby/rouge/wiki/List-of-supported-languages-and-lexers>，也可以自己运行 `rougify list` 命令查看最新列表。
+Consulte <https://github.com/rouge-ruby/rouge/wiki/List-of-supported-languages-and-lexers> para obter a lista de idiomas ou você mesmo pode executar rougify listo comando para visualizar a lista mais recente.
 
-## Gitalk 授权登录后提示 403 错误
+## Gitalk solicita erro 403 após login autorizado
 
-具体看到的错误信息为 `Error: Requrest failed with status code 403`。
+A mensagem de erro específica que você vê é `Error: Requrest failed with status code 403`。
 
-详细的讨论可以参考 <https://github.com/gitalk/gitalk/issues/429>，这个 Issue 里也提到了问题原因和解决方案：更新 Gitalk 到 1.7.2 版本，或者自行搭建 CORS proxy service 并增加配置 `proxy: '<你的 proxy 地址>'`。
+Para uma discussão detalhada, consulte <https://github.com/gitalk/gitalk/issues/429> . Este problema também menciona a causa e a solução do problema: atualize o Gitalk para a versão 1.7.2 ou crie um serviço de proxy CORS por você mesmo e adicionar configuração proxy: `proxy: '<seu_endereço_proxy>'`。
 
-如果是使用本模板最新代码，那不用做什么，会自动引用最新版本。如果一再刷新后还是不行的话，那需要刷新一下你本地的缓存，方法是依次访问以下 2 个链接：
+Se você estiver usando o código mais recente deste modelo, não precisa fazer nada, a versão mais recente será referenciada automaticamente. Se ainda não funcionar depois de atualizar repetidamente, você precisará atualizar seu cache local visitando os dois links a seguir:
 
 - <https://purge.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js>
 - <https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js?v=1.7.2>
 
-## Gitalk 评论框部分提示 Error: Not Found
+## A parte da caixa de comentários do Gitalk solicita o erro: não encontrado
 
-页面上提示 `Error: Not Found.`，浏览器控制台可以看到报错信息 `GET https://api.github.com/repos/<用户名>/<repo>/issues?labels=gitment,xxx 404`。
+Há um prompt na página `Error: Not Found.`，e o console do navegador pode ver a mensagem de erro `GET https://api.github.com/repos/<user>/<repo>/issues?labels=gitment,xxx 404`。
 
-这种情况一般是 _config.yml 的 gitalk.repo 这个配置项填写的不对。这个配置项是要填写一个利用其 Issues 存储评论内容的代码仓库名称，请确保填写的名称对应的代码仓库存在，如果想省事点可以直接填写博客源码对应的仓库名称，比如 `<用户名>.github.io`。
+Nesse caso, o item de configuração gitalk.repo em _config.yml não foi preenchido corretamente. Este item de configuração é para preencher o nome de um depósito de código que usa seus problemas para armazenar o conteúdo do comentário. Verifique se o depósito de código correspondente ao nome preenchido existe. Se você quiser evitar problemas, pode preencher diretamente o nome do depósito correspondente ao código-fonte do blog, por exemplo `<user>.github.io`。
 
-## 修改二维码图片
+## Modificar a imagem do código QR
 
-_config.yml 里的 components.qrcode 这一段用于控制二维码。
+A seção components.qrcode em _config.yml é usada para controlar o código QR.
 
-不显示二维码：将 components.qrcode.enabled 改为 false。
+Não exibir o código QR: altere components.qrcode.enabled para falso.
 
-替换二维码图片：替换 assets/images/qrcode.jpg 文件。
+Substitua a imagem do código QR: substitua o arquivo assets/images/qrcode.jpg.
 
-## _data 目录下的 yml 文件内容含义
+## O significado do conteúdo do arquivo yml no diretório _data
 
-*skills.yml* 文件里的内容对应[「关于」][1]页面里的 Skill Keywords。
+O conteúdo do arquivo skills.yml corresponde às palavras-chave da habilidade na página "Sobre"
 
 ![](/images/posts/template/skills.yml.png)
 
-*social.yml* 文件里的内容对应[「关于」][1]页面里的「联系」里的内容。
+O conteúdo do arquivo social.yml corresponde ao conteúdo do "Contato" na página "Sobre" .
 
 ![](/images/posts/template/social.yml.png)
 
-*links.yml* 文件里的内容对应[「链接」][2]页面里的内容。
+O conteúdo do arquivo links.yml corresponde ao conteúdo da página "Links" .
 
 ![](/images/posts/template/links.yml.png)
 

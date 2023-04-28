@@ -1,14 +1,14 @@
 ---
 layout: page
 title: Links
-description: 没有链接的博客是孤独的
-keywords: 友情链接
+description: Um blog sem links é solitário
+keywords: links, bibliografia
 comments: true
-menu: 链接
+menu: links
 permalink: /links/
 ---
 
-> God made relatives. Thank God we can choose our friends.
+> Obrigado a comunidades virtuais.
 
 <ul>
 {% for link in site.data.links %}
@@ -18,7 +18,7 @@ permalink: /links/
 {% endfor %}
 </ul>
 
-> 友情链接
+> Links
 
 <ul>
 {% for link in site.data.links %}
