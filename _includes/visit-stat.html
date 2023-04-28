@@ -1,17 +1,17 @@
-<!-- 不蒜子访问统计 -->
+<!-- Estatisticas-->
 {% if site.components.busuanzi.enabled == true and page.visit-stat != 'hidden' and page.layout != 'mindmap' %}
 <script async src="{{ assets_base_url }}/assets/vendor/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <div class="mobile-hidden" style="margin-top:8px">
   <span id="busuanzi_container_site_pv" style="display:none">
-    本站访问量<span id="busuanzi_value_site_pv"></span>次
+    Visitas: <span id="busuanzi_value_site_pv"></span>por categoria
   </span>
   <span id="busuanzi_container_site_uv" style="display:none">
-    / 本站访客数<span id="busuanzi_value_site_uv"></span>人
+    / No site:<span id="busuanzi_value_site_uv"></span>pessoas
   </span>
   <span id="busuanzi_container_page_pv" style="display:none">
-    / 本页访问量<span id="busuanzi_value_page_pv"></span>次
+    / No link<span id="busuanzi_value_page_pv"></span>por categoria
     {% if site.components.busuanzi.start_date %}
-    / 统计始于{{ site.components.busuanzi.start_date }}
+    / Números:{{ site.components.busuanzi.start_date }}
     {% endif %}
   </span>
 </div>
