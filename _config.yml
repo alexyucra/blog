@@ -23,7 +23,7 @@ components:
     # compartilhar
     # weibo,qq,wechat,douban,qzone,linkedin,facebook,twitter
     share:
-        enabled: false
+        enabled: true
         hide-platforms: qq,facebook
     # Não faça estatísticas de visitas de alhozi
     busuanzi:
@@ -39,7 +39,7 @@ components:
     # O canto superior direito da página e o código QR na página "Sobre"
     # Por favor, substitua a imagem assets/images/qrcode.jpg
     qrcode:
-        enabled: true
+        enabled: false
         image_alt: Análise, Tecnologia e Desenvolvimento
     # Qual visualização é usada para a página de índice do wiki, lista de suporte (lista)/categoria (cate)
     wiki:
@@ -73,9 +73,9 @@ navs:
     href: /categories/
     label: Categorias
 
-#   -
-#     href: /archives/
-#     label: Arquivos
+  -
+    href: /archives/
+    label: Arquivos
 
 #   -
 #     href: /open-source/
