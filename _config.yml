@@ -133,7 +133,7 @@ comments_provider: giscus
 # !!!Important!!! Please modify infos below to yours
 # disqus referencia：https://disqus.com
 disqus:
-    username: 
+    username: latin_dev
 # gitment referencia：https://imsun.net/posts/gitment-introduction/
 gitment:
     owner: mzlogin
